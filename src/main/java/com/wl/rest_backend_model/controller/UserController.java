@@ -23,7 +23,7 @@ public class UserController {
 
     @PostMapping(value = "/search/page")
     public RestPage<User> pageMerchantAdjustment(@RequestBody() @Valid() RestPageRequestBody body) {
-        return RepositorySearchUtils.page(userRepository, body);
+        return RepositorySearchUtils.<User>page(body, (spec, pageRequest) -> userRepository.findAll(spec, pageRequest));
     }
 
     @PostMapping

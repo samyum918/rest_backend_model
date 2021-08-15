@@ -1,15 +1,21 @@
 spring:
+  flyway:
+    enabled: true
+    cleanDisabled: true
+    baselineOnMigrate: true
+    baselineVersion: 1
   datasource:
+    platform: mysql
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/test?useSSL=false&serverTimezone=UTC&useUnicode=yes&characterEncoding=UTF-8
     username: mysql_user
     password: 123456
-    initialization-mode: always
+    initialization-mode: never
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate.jdbc.batch_size: 20
       hibernate.order_inserts: true

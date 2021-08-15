@@ -1,0 +1,2 @@
+INSERT INTO `user` (`id`, `create_time`, `update_time`, `address1`, `address2`, `birth`, `name`, `phone`) VALUES
+(9, '2021-07-04 03:28:00', '2021-07-04 03:28:00', 'address9', NULL, '1995-01-03', 'abc', '12395678');

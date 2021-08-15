@@ -1,0 +1,22 @@
+spring:
+  flyway:
+    enabled: true
+    cleanDisabled: true
+    baselineOnMigrate: true
+    baselineVersion: 1
+  datasource:
+    platform: h2
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password: sa
+    initialization-mode: never
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+      path: /h2
